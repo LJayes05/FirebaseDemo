@@ -5,12 +5,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aydin.firebasedemo.SecondaryController">
-    <children>
-        <Label text="Secondary View" />
-        <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Switch to Primary View" />
-    </children>
+<?import javafx.scene.layout.Region?>
+<VBox alignment="CENTER" spacing="20.0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      stylesheets="@style.css"
+      styleClass="vbox"
+      fx:controller="aydin.firebasedemo.SecondaryController"
+      prefHeight="500" prefWidth="600">
+
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="50" left="50" right="50" top="50"/>
     </padding>
+
+    <Label styleClass="title-label" style="-fx-font-size: 25px; -fx-font-weight: bold;" text="Welcome to Firebase Demo"/>
+
+    <Region prefHeight="10"/>
+
+    <Label text="Create an Account or Sign In to start"/>
+
+    <Region prefHeight="20"/>
+
+    <Button fx:id="registerButton" onAction="#registerForm" prefWidth="250" prefHeight="50" text="Register"/>
+
+    <Button fx:id="signInButton" onAction="#signInForm" prefWidth="250" prefHeight="50" text="Sign In"/>
 </VBox>

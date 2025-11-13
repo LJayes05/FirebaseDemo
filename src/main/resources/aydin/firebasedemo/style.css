@@ -1,0 +1,111 @@
+/* STYLEEEE!!*/
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #dfc3de;
+}
+
+/* VBox containers */
+.vbox {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+/* Labels - Titles */
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #56155a;
+}
+
+.subtitle-label {
+    -fx-font-size: 15px;
+    -fx-text-fill: #adbebf;
+}
+
+/* Text Fields */
+.text-field, .text-area {
+    -fx-background-color: white;
+    -fx-border-color: #0c1113;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #181057;
+    -fx-border-width: 2;
+}
+
+/* Primary Buttons*/
+.button {
+    -fx-background-color: #77b7e3;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20 10 20;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #c0aee3;
+}
+
+.button:pressed {
+    -fx-background-color: #1f5f8b;
+}
+
+/* Style for Secondary Button */
+.secondary-button {
+    -fx-background-color: #c0aee3;
+    -fx-text-fill: white;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #a689e8;
+}
+
+/* Register - Success */
+.success-button {
+    -fx-background-color: #27ae60;
+}
+
+.success-button:hover {
+    -fx-background-color: #8ae68e;
+}
+
+/* Danger/Warning styling */
+.danger-button {
+    -fx-background-color: #e74c3c;
+}
+
+.danger-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Status labels */
+.status-label {
+    -fx-font-size: 14px;
+    -fx-padding: 5;
+}
+
+.error-label {
+    -fx-text-fill: #de6d83;
+    -fx-font-weight: bold;
+}
+
+.success-label {
+    -fx-text-fill: #8ae68e;
+    -fx-font-weight: bold;
+}
+
+/* Text Area specific */
+.text-area {
+    -fx-font-family: "Lucid Console", "Courier New", monospace;
+}
+
+.text-area .content {
+    -fx-background-color: #ecf0f1;
+}

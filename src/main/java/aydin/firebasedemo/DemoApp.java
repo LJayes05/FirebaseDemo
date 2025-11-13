@@ -39,7 +39,9 @@ public class DemoApp extends Application {
         fauth = FirebaseAuth.getInstance();
 
         scene = new Scene(loadFXML("primary"), 640, 480);
+        //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
+        //stage.setTitle("Welcome to Firebase Demo");
         stage.show();
     }
 

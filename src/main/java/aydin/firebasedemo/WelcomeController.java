@@ -50,29 +50,15 @@ public class WelcomeController {
             statusLabel.setText("Please enter email and password.");
             return;
         }
+
         try {
             UserRecord userRecord = DemoApp.fauth.getUserByEmail(email);
-
-            statusLabel.setText("Sign In Successful! Proceeding to data access.");
-            // Switch to the data access screen
+            statusLabel.setText("Sign In Successful!");
             DemoApp.setRoot("primary");
-
-        } catch (FirebaseAuthException ex) {
-            statusLabel.setText("Sign In failed! User not found or incorrect credentials.");
-        } catch (IOException ex) {
-            statusLabel.setText("Failed to switch scene.");
+        } catch (FirebaseAuthException e) {
+            statusLabel.setText("User not found or invalid credentials.");
+        } catch (IOException e) {
+            statusLabel.setText("Failed to switch screen.");
         }
-    }
-
-    @FXML
-    void switchToSecondary(ActionEvent event) {
-        try{
-            DemoApp.setRoot("secondary");
-
-        }
-        catch (IOException ex){
-            statusLabel.setText("Failed to switch scene.");
-        }
-
     }
 }

@@ -29,6 +29,10 @@ public class PrimaryController {
     @FXML
     private TextField nameTextField;
 
+    //add new textfield
+    @FXML
+    private TextField phoneTextField;
+
     @FXML
     private TextArea outputTextArea;
 
@@ -78,7 +82,7 @@ public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        DemoApp.setRoot("secondary");
+        DemoApp.setRoot("Secondary");
     }
     public boolean readFirebase()
     {
@@ -97,11 +101,18 @@ public class PrimaryController {
                 listOfUsers.clear();
                 for (QueryDocumentSnapshot document : documents)
                 {
-                    outputTextArea.setText(outputTextArea.getText()+ document.getData().get("Name")+ " , Age: "+
-                            document.getData().get("Age")+ " \n ");
+                    outputTextArea.setText(outputTextArea.getText()+
+                            document.getData().get("Name")+ " , Age: " +
+                            document.getData().get("Age")+ " , Phone: " +
+                            document.getData().get("Phone")+ " \n ");
+
                     System.out.println(document.getId() + " => " + document.getData().get("Name"));
-                    person  = new Person(String.valueOf(document.getData().get("Name")),
-                            Integer.parseInt(document.getData().get("Age").toString()));
+
+                    person  = new Person(
+                            String.valueOf(document.getData().get("Name")),
+                            Integer.parseInt(document.getData().get("Age").toString()),
+                            String.valueOf(document.getData().get("Phone"))
+                    );
                     listOfUsers.add(person);
                 }
             }
@@ -132,7 +143,7 @@ public class PrimaryController {
         try {
             userRecord = DemoApp.fauth.createUser(request);
             System.out.println("Successfully created new user with Firebase Uid: " + userRecord.getUid()
-            + " check Firebase > Authentication > Users tab");
+                    + " check Firebase > Authentication > Users tab");
             return true;
 
         } catch (FirebaseAuthException ex) {
@@ -150,6 +161,7 @@ public class PrimaryController {
         Map<String, Object> data = new HashMap<>();
         data.put("Name", nameTextField.getText());
         data.put("Age", Integer.parseInt(ageTextField.getText()));
+        data.put("Phone",phoneTextField.getText());
 
         //asynchronously write data
         ApiFuture<WriteResult> result = docRef.set(data);
